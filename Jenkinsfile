@@ -5,13 +5,13 @@ pipeline {
       steps {
         parallel(
           "Pre-check-AUTH": {
-            sh 'mipm install -p ansible-apd'
-            sh 'ansible-playbook apd.yml -i hosts'
+            sh 'echo hi'
+            sh 'echo hi'
             
           },
           "Pre-check-WORKCENTER": {
-            sh 'mipm install -p ansible-playbook'
-            sh 'ansible-playbook apd.yml'
+            sh 'echo hi'
+            sh 'echo hi'
             
           }
         )
@@ -21,13 +21,13 @@ pipeline {
       steps {
         parallel(
           "Provision-AUTH": {
-            sh 'mipm install -p ansible-playbook'
-            sh 'ansible-playbook apd.yml -i hosts'
+            sh 'echo hi'
+            sh 'echo hi'
             
           },
           "Provision-WORKCENTER": {
-            sh 'mipm install -p ansible-playbook'
-            sh 'ansible-playbook apd.yml -i hosts'
+            sh 'echo hi'
+            sh 'echo hi'
             
           }
         )
@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Label') {
       steps {
-        sh 'mipm label'
+        sh 'echo hi'
       }
     }
   }
